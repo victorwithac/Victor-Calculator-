@@ -106,7 +106,7 @@ int main(void) {
             default:
                 hasError = 1;
                 option = '1';
-                printf("Invalid option, retype 1\n");
+                printf("Invalid option, retype \n");
 
         }
 
@@ -123,7 +123,7 @@ int main(void) {
             scanf("%c", &option);
 
             while (option != '1' && option != '2') {
-                printf("Invalid option, retype 2\n");
+                printf("Invalid option, retype \n");
                 fflush(stdin);
                 scanf("%c", &option);
             }
