@@ -18,6 +18,7 @@ int main(void) {
     //O 'do' está executando o código, apartir da informação atribuida na função while, que significa 'enquanto',
     //enquanto a informação que está no while for 'true' o do será executado.
     do {
+        //variável específica para os casos de erro no programa
         int hasError = 0;
 
         printf("\n+ SUM\n- SUBTRACTION\n* MULTIPLICATION\n/ DIVISION\n^ POTENTIATION\nr SQUARE ROOT \n");
@@ -33,6 +34,8 @@ int main(void) {
         //em algumas situações, cada caso representa a escolha do usário para a variável 'option'
         //No momento que ele digita o símbolo que representa a opção escolhida o switch entra com um dos 'case'
         //E então por sua vez, atribui um valor para a variável 'result'
+        
+      
 
         switch (option) {
             case '+':
@@ -64,12 +67,13 @@ int main(void) {
 
                 break;
             case '/':
+                //tendo em mente que não é possível dividir um número por 0, foi necessário uma mensagem de erro caso o usuário digite o valor de 0
+                //na variável 'value2'.
                 printf("\nEnter a value:");
                 scanf("%f", &value1);
 
                 printf("Enter another value:");
                 scanf("%f", &value2);
-                //realmente precisa do if, else?
                 if (value2 == 0) {
                     hasError = 1;
                     printf("\nERROR\n");
@@ -81,7 +85,7 @@ int main(void) {
 
                 break;
 
-                //Tanto o case 5 e o case 6, que respectivamente representam a exponenciação e raiz quadrada,
+                //Tanto o case ^ e o case r, que respectivamente representam a exponenciação e raiz quadrada,
                 //foram tirados da biblioteca math.h com as funções 'pow' e 'sqrt'
             case '^':
                 printf("\nEnter a value:");
@@ -97,6 +101,8 @@ int main(void) {
 
                 result = sqrt(value1);
                 break;
+                //'default' que serve como se fosse um 'else' do switch case, está dizend que a variável destinada ao erro, é 'true'
+                // e apartir dai a variável 'option' vale 1
             default:
                 hasError = 1;
                 option = '1';
@@ -104,10 +110,7 @@ int main(void) {
 
         }
 
-        //Para que fosse possível que não desse algum tipo de erro na leitura do programa e na hora do meu código
-        //rodar no terminal, tive que utilizar das funções if, else if e else para que dependendo do valor atribuido
-        //as variáveis pelo usuário, o terminal mostrasse de forma correta.
-
+     
         //Eu quis que minha calculadora reiniciasse logo após o programa printar o resultado,
         //coloquei então, duas opções para continuar 1 ou 2, e caso o usuário digite algum valor diferente desses dois
         //o programa mostrará uma mensagem de opção inválida e pedirá que o usuário digite novamente.
