@@ -15,8 +15,10 @@ int main(void) {
     printf("Algorithm and Programming Course\n");
     printf("La Salle University\n\n\n");
 
-    //O 'do' está executando o código, apartir da informação atribuida na função while, que significa 'enquanto',
+    //O 'do' está executando o código, apartir da função while, que significa 'enquanto',
     //enquanto a informação que está no while for 'true' o do será executado.
+    //mesmo que a informação contida no while seja 'false', o programa irá rodar ao menos uma vez,
+    //até chegar no while no fim do código, confirmando o 'false' o programa irá parar.
     do {
         //variável específica para os casos de erro no programa
         int hasError = 0;
@@ -25,10 +27,7 @@ int main(void) {
         fflush(stdin);
         scanf("%c", &option);
 
-        //Como a raiz quadrada só lida com um valor, foi preciso trazer uma condicional para meu código que caso
-        // a opção escolhida pelo usuário fosse 'r' o terminal pedisse apenas um valor
-
-        //else (se não), o programa pediria então dois valores para as demais opções de operações
+       
 
         //switch que é outra forma de usar a condicional como o 'if', deixa de forma mais organizada
         //em algumas situações, cada caso representa a escolha do usário para a variável 'option'
