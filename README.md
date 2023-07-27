@@ -1,2 +1,3 @@
 # Victor-Calculator-
-Ling C
+
+Calculadora feita em C
